@@ -5,15 +5,28 @@ import java.util.Random;
 public class Herramietas {
 
 	public static void main(String[] args) {
-		int estacionamieto[]= new int[100];
+		@SuppressWarnings("unused")
+		Arreglos <Integer> estacionamieto=new Arreglos<Integer>(100);
+		
 		Random numero_ramdomRandom=new Random();
+		
 		// para rellenar el array
-		for(int i =0; i<estacionamieto.length-1; i++) {
-			estacionamieto[i]=i+1;
-			System.out.println(estacionamieto[i]);
+		for(int i =0; i<estacionamieto.longitud()-1; i++) {
+			try {
+				estacionamieto.asignar(i, i+1);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				System.out.println(estacionamieto.recupera(i));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		// es para decidir el carro dentro del estacionamieto es retirado o se queda
-		for (int i= 0; i<estacionamieto.length-1; i++) {
+		for (int i= 0; i<estacionamieto.longitud()-1; i++) {
 			int desition=numero_ramdomRandom.nextInt(101);
 			// si el numero entra dentro de este rango del no se ejcutara el inetercabio de las posiciones 
 			if (desition<=100&&desition>=50) {
@@ -23,7 +36,18 @@ public class Herramietas {
 				System.out.println("-----------------------------------");
 			}else {
 				//si no entra detro del rango del numero generado 
-				for (int j =i; j<=(estacionamieto.length-1-j);j++) {
+				for (int j =i; j<=(estacionamieto.longitud()-1-j);j++) {
+					try {
+						//guarda el dato siguiente antes de ser sobre escrito
+						int temporal= estacionamieto.recupera(estacionamieto.siguiente(j));
+						// sobre escribe el dato de la siguiente posicion  haciendo que en la posiscion n, n+1 tengan el mismo dato
+						estacionamieto.asignar(estacionamieto.siguiente(j), estacionamieto.recupera(j));
+						//una vez que n+1 tine el dato en 
+						estacionamieto.asignar(j, temporal);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
 				}
 			}
