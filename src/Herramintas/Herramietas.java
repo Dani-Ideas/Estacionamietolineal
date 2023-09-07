@@ -1,4 +1,5 @@
 package Herramintas;
+import fes.aragon.utilerias.estaticas.arreglos.Arreglos;
 import java.util.Random;
 
 public class Herramietas {
@@ -11,13 +12,20 @@ public class Herramietas {
 			estacionamieto[i]=i+1;
 			System.out.println(estacionamieto[i]);
 		}
-		// es para decidir que numero de carro en la posicion del array se retiran de carros del estacionamieto
+		// es para decidir el carro dentro del estacionamieto es retirado o se queda
 		for (int i= 0; i<estacionamieto.length-1; i++) {
-			int desicion=numero_ramdomRandom.nextInt(100);
-			if (desicion<=49) {
-				// si el numero entra dentro de este rango de ejcutara el inetercabio de las posiciones 
+			int desition=numero_ramdomRandom.nextInt(101);
+			// si el numero entra dentro de este rango del no se ejcutara el inetercabio de las posiciones 
+			if (desition<=100&&desition>=50) {
+				/* Este rango fue selecionado por que el metodo nextInt(100) genera numeros aleatorios del 0 al 100 este metodo puede ser modificado en proximas versiones
+				 *  de la aberracion llamada Java
+				 * */
+				System.out.println("-----------------------------------");
 			}else {
-				//si no etra detro del rango del numero generado 
+				//si no entra detro del rango del numero generado 
+				for (int j =i; j<=(estacionamieto.length-1-j);j++) {
+					
+				}
 			}
 		}
 }
