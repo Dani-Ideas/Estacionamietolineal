@@ -22,12 +22,11 @@ public class Herramietas {
 				/* Este rango fue selecionado por que el metodo nextInt(2) genera numeros aleatorios del 0 al 1 este metodo puede ser modificado en proximas versiones
 				 *  de la aberracion llamada Java
 				 * */
-				System.out.println("-----------------------------------\n El carrro "+i+" permanece dentro del estacionamiento\n");
+				System.out.println("-----------------------------------\n El carrro "+(i+1)+" permanece dentro del estacionamiento\n");
 			}else {
-				System.out.println("***********************************\n El carrro "+i+" se va, llego el dueño\n");
+				System.out.println("***********************************\n El carrro "+(i+1)+" se va, llego el dueño\n");
 				//si no entra detro del rango del numero generado
 				estacionamieto.asignar(i, -1);
-				estacionamieto.imprime();
 				int calle=estacionamieto.ultimo();
 				// en  este caso el -2 se va a tomar como null en lo que encuetro una manera de que calle pueda alamacenar null
 				// en  este caso el -2 se va a tomar como null en lo que encuetro una manera de que calle pueda alamacenar null
