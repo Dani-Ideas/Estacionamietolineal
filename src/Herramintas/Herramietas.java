@@ -8,9 +8,9 @@ public class Herramietas {
 
 	public static void main(String[] args) { try (Scanner scan = new Scanner(System.in)) { 
 		
-		String palabra=scan.next();
+		/*String palabra=scan.next();
 		System.out.println(palabra);
-		
+		 * */		
 		Arreglos <Integer> estacionamieto=new Arreglos<Integer>(20);
 		Random numberRandom=new Random();
 		
