@@ -98,10 +98,10 @@ public class Arreglos<E> {
     public int longitud() {
     	return array_to_manipulate.length;
     }
-    public E ultimo() {
+    /*
+     * public E ultimo() {
     	@SuppressWarnings("unchecked")/// esta linea se pone por elcipse lo solicita
     	final E last=(E)array_to_manipulate[array_to_manipulate.length-1];
     	return last;
-    }
-    
+    }*/
 }
